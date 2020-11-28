@@ -32,7 +32,7 @@ const main = async () => {
 
         // scrape realted article link and title
         $(".item-title").each((i, el) => {
-          // no unique id or class for related article
+          //! no unique id or class for related article
           // related article is the first 5 element
           if (i < 5) {
             postData.relatedArticles.push({
@@ -43,7 +43,7 @@ const main = async () => {
         });
 
         // works, but inefficient
-        // async problem, have to write like this, need fix
+        //! async problem, have to write like this, need fix
         articles.articles.push(postData);
         fs.writeFileSync("./solution.json", JSON.stringify(articles, null, 2));
       } catch (err) {
